@@ -10,14 +10,14 @@ router.get('/', async (req, res) => {
   }
 
   try {
-    const response = await axios.post('https://lemon-welcome.vercel.app/api/generate-image', {
+    const response = await axios.post('https://zymzzstore.my.id', {
       name,
       image: profile,
       welcome: welcome === 'true'
     }, {
       headers: {
         'Content-Type': 'application/json',
-        'Origin': 'https://lemon-welcome.vercel.app'
+        'Origin': 'https://zymzzstore.my.id'
       },
       responseType: 'arraybuffer'
     });
