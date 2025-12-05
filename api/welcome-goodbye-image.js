@@ -2,17 +2,16 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  const { name, profile, welcome } = req.query;
+router.post('/', async (req, res) => {
+  const { url } = req.query;
 
-  if (!name || !profile) {
+  if (url) {
     return res.status(400).json({ error: 'Parameter name dan profile wajib diisi.' });
   }
 
   try {
-    const response = await axios.post('https://zymzzstore.my.id', {
-      name,
-      image: profile,
+    const response = await axios.post('https://zymzzstore.my.id', 
+      image: url,
       welcome: welcome === 'true'
     }, {
       headers: {
